@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module Transactions
       def transactions(args = {})
-        results = process_request(:get, 'accounting/transactions/search', params: args.to_camelback_keys)
+        results = process_request(:get, 'accounting/transactions/search', params: args)
         return results if results.is_a?(RentvineError)
 
         results.map do |result|

@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module VendorTrades
       def vendor_trades(args = {})
-        results = process_request(:get, 'maintenance/vendor-trades', params: args.to_camelback_keys)
+        results = process_request(:get, 'maintenance/vendor-trades', params: args)
         return results if results.is_a?(RentvineError)
 
         results.map { |result| Rentvine::VendorTrade.new(result[:vendor_trade]) }

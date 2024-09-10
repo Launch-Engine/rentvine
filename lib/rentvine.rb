@@ -10,4 +10,5 @@ require 'ostruct'
 
 require_relative 'rentvine/version'
 require_relative 'rentvine/client'
+require_relative 'rentvine/rentvine_object_types'
 require_relative 'rentvine/rentvine_error'

@@ -46,7 +46,7 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
   - Bills
     - List `GET /accounting/bills`
     - Create `POST /accounting/bills`
-    - View `GET /accounting/bills/:bill_id` ??
+    - View `GET /accounting/bills/:bill_id`
   - Ledgers
     - List `GET /accounting/ledgers`
     - Search `GET /accounting/ledgers/search`
@@ -76,6 +76,13 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
     - List `GET /vendors/search`
   - Associations
     - List `GET /associations/search`
+
+- Files
+  - Files
+    - List `GET /files`
+    - View `GET /files/:file_id`
+    - Upload `POST /files`
+    - Delete `DELETE /files/:file_id`
 
 - Leases
   - Leases
@@ -120,9 +127,13 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 
 ## TODO Endpoints
 
-- Files
-  - Files
-    - Upload `POST /files`
+All known endpoints have been implemented. If you know of any endpoints that are not listed above, please open an issue or a pull request.
+
+## Helper Object Type
+
+`Object Types` is under the API documentation.
+You can access the options type helper as a hash by calling `Rentvine::OBJECT_TYPES`.
+This will return a hash of all the object types and their corresponding values.
 
 ## Limitations
 

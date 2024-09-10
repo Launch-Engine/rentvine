@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module WorkOrders
       def work_orders(args = {})
-        results = process_request(:get, 'maintenance/work-orders', params: args.to_camelback_keys)
+        results = process_request(:get, 'maintenance/work-orders', params: args)
         return results if results.is_a?(RentvineError)
 
         results.map { |result| Rentvine::WorkOrder.new(result[:work_order]) }

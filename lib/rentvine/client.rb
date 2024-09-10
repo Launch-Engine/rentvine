@@ -25,6 +25,7 @@ require_relative 'model/application'
 require_relative 'model/association'
 require_relative 'model/bill'
 require_relative 'model/diagnostic'
+require_relative 'model/file'
 require_relative 'model/inspection'
 require_relative 'model/lease'
 require_relative 'model/ledger'
@@ -83,13 +84,42 @@ module Rentvine
       }
     end
 
-    def process_request(request_type, url_path, data = {})
-      data_params = data[:params] || {}
+    def process_file(file_path, params)
+      request_params = {
+        method: :post,
+        params: params.to_camelback_keys,
+        headers: {
+          "Content-Type" => "multipart/form-data",
+          'Authorization' => "Basic #{rentvine_basic_auth}"
+        },
+        body: { file: File.open(file_path) }
+      }
+
+      proxy = @auth[:proxy] || ENV['PROXY']
+      request_params[:proxy] = proxy unless proxy.nil?
+
+      response = Typhoeus::Request.new(
+        "https://#{@auth[:account_code]}.rentvine.com/api/manager/files",
+        request_params
+      ).run
+      return RentvineError.new(response) unless response.success?
+
+      process_rentvine_response(response)
+    end
+
+    def process_rentvine_response(response)
+      JSON.parse(response.body, symbolize_names: true).to_snake_keys
+    rescue
+      response.body
+    end
+
+    def process_request(request_type, url_path, options = {})
+      options_params = options[:params] || {}
       request_params = {
         method: request_type,
-        params: data_params,
+        params: options_params.to_camelback_keys,
         headers: rentvine_auth_headers,
-        body: data[:body]&.to_json
+        body: options[:body]&.to_json
       }
 
       proxy = @auth[:proxy] || ENV['PROXY']
@@ -99,26 +129,21 @@ module Rentvine
         "https://#{@auth[:account_code]}.rentvine.com/api/manager/#{url_path}",
         request_params
       ).run
-
-      rentvine_response = nil
-      begin
-        rentvine_response = JSON.parse(response.body, symbolize_names: true).to_snake_keys
-      rescue
-        rentvine_response = response.body
-      end
-
       return RentvineError.new(response) unless response.success?
 
-      rentvine_response
+      process_rentvine_response(response)
     end
 
     def rentvine_auth_headers
-      rentvine_basic_auth = Base64.strict_encode64("#{@auth[:api_key]}:#{@auth[:api_secret]}")
       {
         'Content-Type' => 'application/json',
         'charset' => 'utf-8',
         'Authorization' => "Basic #{rentvine_basic_auth}"
       }
+    end
+
+    def rentvine_basic_auth
+      Base64.strict_encode64("#{@auth[:api_key]}:#{@auth[:api_secret]}")
     end
   end
 end

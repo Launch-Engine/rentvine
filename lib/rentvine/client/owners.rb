@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module Owners
       def owners(args = {})
-        results = process_request(:get, 'owners/search', params: args.to_camelback_keys)
+        results = process_request(:get, 'owners/search', params: args)
         return results if results.is_a?(RentvineError)
 
         results.map { |result| Rentvine::Owner.new(result[:contact]) }

@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module Units
       def units(property_id, args = {})
-        results = process_request(:get, "properties/#{property_id}/units", params: args.to_camelback_keys)
+        results = process_request(:get, "properties/#{property_id}/units", params: args)
         return results if results.is_a?(RentvineError)
 
         results.map { |result| Rentvine::Unit.new(result[:unit]) }

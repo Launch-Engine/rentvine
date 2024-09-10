@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module Leases
       def leases(args = {})
-        results = process_request(:get, 'leases', params: args.to_camelback_keys)
+        results = process_request(:get, 'leases', params: args)
         return results if results.is_a?(RentvineError)
 
         results.map { |result| Rentvine::Lease.new(result[:lease]) }

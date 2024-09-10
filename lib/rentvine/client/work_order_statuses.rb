@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module WorkOrderStatuses
       def work_order_statuses(args = {})
-        results = process_request(:get, 'maintenance/work-order/statuses', params: args.to_camelback_keys)
+        results = process_request(:get, 'maintenance/work-order/statuses', params: args)
         return results if results.is_a?(RentvineError)
 
         results.map { |result| Rentvine::WorkOrderStatus.new(result[:work_order_status]) }

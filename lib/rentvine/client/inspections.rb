@@ -2,7 +2,7 @@ module Rentvine
   class Client
     module Inspections
       def inspections(args = {})
-        results = process_request(:get, 'maintenance/inspections', params: args.to_camelback_keys)
+        results = process_request(:get, 'maintenance/inspections', params: args)
         return results if results.is_a?(RentvineError)
 
         results.map { |result| Rentvine::Inspection.new(result[:inspection]) }
