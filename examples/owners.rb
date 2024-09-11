@@ -15,3 +15,7 @@ rv_client = Rentvine::Client.new(auth)
 rv_client.owners.each do |owner|
   puts owner.name
 end
+
+rv_client.owners(page: 1, page_size: 5).each do |owner|
+  puts owner.name
+end
