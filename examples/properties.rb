@@ -55,21 +55,27 @@ else
   puts new_property_saved_or_rentvine_error.address
 end
 
-puts '---------------------------------'
+# ===========================
 
 property_id = 13
 rv_client.activate_property(13)
 puts 'Property 13 activated'
 
-puts '---------------------------------'
+# ===========================
 
 property_id = 13
 rv_client.deactivate_property(13)
 puts 'Property 13 deactivated'
 
-puts '---------------------------------'
+# ===========================
 
 property_id = new_property_saved_or_rentvine_error.property_id
 rv_client.delete_property(property_id)
 
-puts '---------------------------------'
+# ===========================
+
+rv_client.export_properties.each do |property|
+  puts property.address
+end
+
+# ===========================

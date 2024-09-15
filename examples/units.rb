@@ -27,3 +27,9 @@ rvu = rv_client.unit(property_id, unit_id)
 puts rvu.address
 
 # ===========================
+
+rv_client.export_units.each do |unit|
+  puts unit.address
+end
+
+# ===========================
