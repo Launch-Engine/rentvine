@@ -15,6 +15,23 @@ module Rentvine
 
         Rentvine::Lease.new(result[:lease])
       end
+
+      def export_leaeses(args = {})
+        results = process_request(:get, 'leases/export', params: args)
+        return results if results.is_a?(RentvineError)
+
+        results.map do |result|
+          rvobj = Rentvine::Lease.new(result[:lease])
+          rvobj.balance = Rentvine::Balance.new(result[:balances])
+          rvobj.balances = rvobj.balance
+          rvobj.tenants = result[:lease][:tenants].map { |tenant| Rentvine::Tenant.new(tenant) }
+          rvobj.property = Rentvine::Property.new(result[:property])
+          rvobj.unit = Rentvine::Unit.new(result[:unit])
+          rvobj.portfolio = Rentvine::Unit.new(result[:portfolio])
+          rvobj.meta = { appends: [:balances, :balance, :tenants, :property, :unit, :portfolio] }
+          rvobj
+        end
+      end
     end
   end
 end

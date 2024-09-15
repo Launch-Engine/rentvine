@@ -44,6 +44,18 @@ module Rentvine
 
         true
       end
+
+      def export_properties(args = {})
+        results = process_request(:get, 'properties/export', params: args)
+        return results if results.is_a?(RentvineError)
+
+        results.map do |result|
+          rvobj = Rentvine::Property.new(result[:property])
+          rvobj.portfolio = Rentvine::Portfolio.new(result[:portfolio])
+          rvobj.meta = { appends: [:portfolio] }
+          rvobj
+        end
+      end
     end
   end
 end

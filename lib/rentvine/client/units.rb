@@ -15,6 +15,18 @@ module Rentvine
 
         Rentvine::Unit.new(result[:unit])
       end
+
+      def export_units(args = {})
+        results = process_request(:get, 'properties/units/export', params: args)
+        return results if results.is_a?(RentvineError)
+
+        results.map do |result|
+          rvobj = Rentvine::Unit.new(result[:unit])
+          rvobj.property = Rentvine::Property.new(result[:property])
+          rvobj.meta = { appends: [:property] }
+          rvobj
+        end
+      end
     end
   end
 end

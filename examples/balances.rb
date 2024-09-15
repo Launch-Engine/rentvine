@@ -9,9 +9,9 @@ auth = {
 rv_client = Rentvine::Client.new(auth)
 
 # =========================================
-# Portfolio Examples
+# Assocation Examples
 # =========================================
 
-rv_client.portfolios.each do |portfolio|
-  puts [portfolio.portfolio_id, portfolio.name].join(' :: ')
+rv_client.export_leaeses.each do |lease_info|
+  puts lease_info.balance.past_due_total_amount
 end
