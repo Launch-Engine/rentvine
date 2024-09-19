@@ -31,6 +31,7 @@ require_relative 'model/inspection'
 require_relative 'model/lease'
 require_relative 'model/ledger'
 require_relative 'model/owner'
+require_relative 'model/owner_distribution'
 require_relative 'model/portfolio'
 require_relative 'model/property'
 require_relative 'model/tenant'
@@ -105,13 +106,13 @@ module Rentvine
       ).run
       return RentvineError.new(response) unless response.success?
 
-      process_rentvine_response(response)
+      process_rentvine_response(response.body)
     end
 
-    def process_rentvine_response(response)
-      JSON.parse(response.body, symbolize_names: true).to_snake_keys
+    def process_rentvine_response(response_body)
+      JSON.parse(response_body, symbolize_names: true).to_snake_keys
     rescue
-      response.body
+      response_body
     end
 
     def process_request(request_type, url_path, options = {})
@@ -132,7 +133,7 @@ module Rentvine
       ).run
       return RentvineError.new(response) unless response.success?
 
-      process_rentvine_response(response)
+      process_rentvine_response(response.body)
     end
 
     def rentvine_auth_headers
