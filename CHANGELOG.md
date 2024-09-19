@@ -2,7 +2,7 @@
 
 ## [0.3.0] - 2024-09-19
 
-- Added model for parsing the owner distrubutions on the portfolio response.
+- Added model for parsing the owner distributions on the portfolio response.
 
 ## [0.2.0] - 2024-09-15
 
