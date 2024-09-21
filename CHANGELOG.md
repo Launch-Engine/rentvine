@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.1] - 2024-09-20
+
+- Resolved issue with the file upload trying to use Rentvine::File instead of Ruby's File class.
+
 ## [0.3.0] - 2024-09-19
 
 - Added model for parsing the owner distributions on the portfolio response.

@@ -94,7 +94,7 @@ module Rentvine
           "Content-Type" => "multipart/form-data",
           'Authorization' => "Basic #{rentvine_basic_auth}"
         },
-        body: { file: File.open(file_path) }
+        body: { file: ::File.open(file_path) }
       }
 
       proxy = @auth[:proxy] || ENV['PROXY']
