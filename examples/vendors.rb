@@ -15,9 +15,6 @@ rv_client = Rentvine::Client.new(auth)
 # Vendor Examples
 # =========================================
 
-binding.pry
-asdf=3
-
 rv_client.vendors.each do |vendor|
   puts vendor.name
 end
