@@ -2,7 +2,7 @@ require 'pry-byebug'
 require 'dotenv'
 require_relative '../lib/rentvine'
 
-Dotenv.load
+Dotenv.load('../.env')
 
 auth = {
   account_code: ENV['RENTVINE_ACCOUNT_CODE'],

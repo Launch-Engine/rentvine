@@ -2,7 +2,7 @@ require 'pry-byebug'
 require 'dotenv'
 require_relative '../lib/rentvine'
 
-Dotenv.load
+Dotenv.load('../.env')
 
 auth = {
   account_code: ENV['RENTVINE_ACCOUNT_CODE'],
@@ -14,6 +14,9 @@ rv_client = Rentvine::Client.new(auth)
 # =========================================
 # Vendor Examples
 # =========================================
+
+binding.pry
+asdf=3
 
 rv_client.vendors.each do |vendor|
   puts vendor.name
