@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.3] - 2025-01-26
+
+- Updated call to tenants to use "/tenants" instead of "/tenants/search".
+
 ## [0.3.2] - 2025-01-25
 
 - Fixed call to leases export endpoint to use the correct spelling.
