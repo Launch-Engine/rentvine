@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.3.2] - 2025-01-25
+
+- Fixed call to leases export endpoint to use the correct spelling.
+
 ## [0.3.1] - 2024-09-20
 
 - Resolved issue with the file upload trying to use Rentvine::File instead of Ruby's File class.

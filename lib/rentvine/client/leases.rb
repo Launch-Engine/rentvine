@@ -16,7 +16,7 @@ module Rentvine
         Rentvine::Lease.new(result[:lease])
       end
 
-      def export_leaeses(args = {})
+      def export_leases(args = {})
         results = process_request(:get, 'leases/export', params: args)
         return results if results.is_a?(RentvineError)
 
