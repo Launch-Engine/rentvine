@@ -24,3 +24,10 @@ end
 lease_id = 7
 rv_obj = rv_client.lease(lease_id)
 puts rv_obj.address
+
+===========================
+
+rv_client.export_leases.each do |lease|
+  binding.pry
+  adsf=3
+end
