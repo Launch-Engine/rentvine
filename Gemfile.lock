@@ -1,9 +1,10 @@
 PATH
   remote: .
   specs:
-    rentvine (0.3.1)
+    rentvine (0.4.0)
       awrence (~> 3.0)
       json (~> 2.7)
+      ostruct (~> 0.6.1)
       plissken (~> 3.0)
       typhoeus (~> 1.4)
 
@@ -41,6 +42,7 @@ GEM
     json (2.7.2)
     language_server-protocol (3.17.0.3)
     method_source (1.1.0)
+    ostruct (0.6.1)
     parallel (1.26.3)
     parser (3.3.6.0)
       ast (~> 2.4.1)

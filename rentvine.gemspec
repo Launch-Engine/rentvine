@@ -30,5 +30,5 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'json', '~> 2.7'
   spec.add_dependency 'plissken', '~> 3.0'
   spec.add_dependency 'awrence', '~> 3.0'
-
+  spec.add_dependency 'ostruct', '~> 0.6.1'
 end
