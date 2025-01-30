@@ -1,5 +1,10 @@
 ## [Unreleased]
 
+## [0.4.0] - 2025-01-30
+
+- Added support on the lease to load the tenants for the lease.
+- Added dependency for ostruct ~> 0.6.1.
+
 ## [0.3.3] - 2025-01-26
 
 - Updated call to tenants to use "/tenants" instead of "/tenants/search".
