@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.5.0] - 2025-xx-xx
+
+- Added support to load an individual tenant by id.
+
 ## [0.4.0] - 2025-01-30
 
 - Added support on the lease to load the tenants for the lease.
