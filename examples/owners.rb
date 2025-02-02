@@ -20,5 +20,5 @@ rv_client.owners.each do |owner|
 end
 
 rv_client.owners(page: 1, page_size: 5).each do |owner|
-  puts owner.name
+  puts owner.first_name
 end
