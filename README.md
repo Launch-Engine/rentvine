@@ -48,7 +48,8 @@ To get started, you will need to build the Docker image:
 docker compose build
 ```
 
-After the image is built, you can run the following command to start the container:
+After the image is built, you can run the following command to start the container. Note that
+you will want to do this in its own terminal window so you can attach to the container.
 
 ```
 docker compose up
@@ -58,6 +59,12 @@ You will see "Attaching to rentvine" in the output. This means the container is 
 
 ```
 docker exec -it rentvine bash
+```
+
+To stop the container, you can run the following command:
+
+```
+docker compose down
 ```
 
 # Rebuild Gemfile.lock
