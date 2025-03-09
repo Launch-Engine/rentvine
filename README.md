@@ -24,6 +24,8 @@ TODO: Write usage instructions here
 
 ## Development
 
+### Local Development using RVM
+
 You will need to add a .env file to the root of the project with the following variables:
 
 ```
@@ -35,6 +37,35 @@ RENTVINE_API_SECRET=your_api_secret
 After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+### Local Development using Docker
+
+You can also use Docker to develop the gem. To do this, you will need to have Docker installed on your machine.
+
+To get started, you will need to build the Docker image:
+
+```
+docker compose build
+```
+
+After the image is built, you can run the following command to start the container:
+
+```
+docker compose up
+```
+
+You will see "Attaching to rentvine" in the output. This means the container is running and you can now run the following command to attach to the container:
+
+```
+docker exec -it rentvine bash
+```
+
+# Rebuild Gemfile.lock
+
+```
+docker compose run rentvine bundle install
+```
+
 
 ## Implemented Endpoints
 

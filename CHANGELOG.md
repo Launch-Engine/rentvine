@@ -4,6 +4,8 @@
 
 - Added support to load an individual tenant by id.
 - Update the endpoint used for fetching owners.
+- Dockerized the project for easier development for those on Windows.
+- Fixed spelling error in the lease model example.
 
 ## [0.4.0] - 2025-01-30
 

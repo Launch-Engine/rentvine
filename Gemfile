@@ -2,7 +2,7 @@
 
 source 'https://rubygems.org'
 
-# Specify your gem's dependencies in buildium.gemspec
+# Specify your gem's dependencies in rentvine.gemspec
 gemspec
 
 group :development do
