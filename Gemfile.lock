@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    rentvine (0.4.0)
+    rentvine (0.5.0)
       awrence (~> 3.0)
       json (~> 2.7)
       ostruct (~> 0.6.1)

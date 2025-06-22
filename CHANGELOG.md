@@ -1,11 +1,13 @@
 ## [Unreleased]
 
-## [0.5.0] - 2025-xx-xx
+## [0.5.0] - 2025-06-22
 
 - Added support to load an individual tenant by id.
 - Update the endpoint used for fetching owners.
 - Dockerized the project for easier development for those on Windows.
 - Fixed spelling error in the lease model example.
+- Added support to load recurrening charges for a lease.
+- Updated gems to the latest versions.
 
 ## [0.4.0] - 2025-01-30
 

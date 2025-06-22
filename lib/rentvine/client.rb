@@ -10,6 +10,7 @@ require_relative 'client/ledgers'
 require_relative 'client/owners'
 require_relative 'client/portfolios'
 require_relative 'client/properties'
+require_relative 'client/recurring_charges'
 require_relative 'client/tenants'
 require_relative 'client/transaction_entries'
 require_relative 'client/transactions'
@@ -34,6 +35,7 @@ require_relative 'model/owner'
 require_relative 'model/owner_distribution'
 require_relative 'model/portfolio'
 require_relative 'model/property'
+require_relative 'model/recurring_charge'
 require_relative 'model/tenant'
 require_relative 'model/transaction_entry'
 require_relative 'model/transaction'
@@ -57,6 +59,7 @@ module Rentvine
     include Rentvine::Client::Owners
     include Rentvine::Client::Portfolios
     include Rentvine::Client::Properties
+    include Rentvine::Client::RecurringCharges
     include Rentvine::Client::Tenants
     include Rentvine::Client::TransactionEntries
     include Rentvine::Client::Transactions
