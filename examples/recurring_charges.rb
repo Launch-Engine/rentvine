@@ -18,7 +18,7 @@ rv_client = Rentvine::Client.new(auth)
 lease_id = 7
 
 rv_client.recurring_charges(lease_id).each do |charge|
-  puts [charge.lease_recurring_charge_id, charge.description, charge.amount].join(' - ')
+  puts [charge.lease_recurring_charge_id, charge.description, charge.amount, charge.account.is_rent].join(' - ')
 end
 
 # ===========================
@@ -26,4 +26,4 @@ end
 lease_id = 7
 lease_recurring_charge_id = 10
 charge = rv_client.recurring_charge(lease_id, lease_recurring_charge_id)
-puts [charge.lease_recurring_charge_id, charge.description, charge.amount].join(' - ')
+puts [charge.lease_recurring_charge_id, charge.description, charge.amount, charge.previous_charge&.amount].join(' - ')
