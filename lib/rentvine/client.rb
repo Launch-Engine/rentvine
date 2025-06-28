@@ -6,6 +6,7 @@ require_relative 'client/diagnostics'
 require_relative 'client/files'
 require_relative 'client/inspections'
 require_relative 'client/leases'
+require_relative 'client/lease_statuses'
 require_relative 'client/ledgers'
 require_relative 'client/owners'
 require_relative 'client/portfolios'
@@ -30,6 +31,7 @@ require_relative 'model/diagnostic'
 require_relative 'model/file'
 require_relative 'model/inspection'
 require_relative 'model/lease'
+require_relative 'model/lease_status'
 require_relative 'model/ledger'
 require_relative 'model/owner'
 require_relative 'model/owner_distribution'
@@ -55,6 +57,7 @@ module Rentvine
     include Rentvine::Client::Files
     include Rentvine::Client::Inspections
     include Rentvine::Client::Leases
+    include Rentvine::Client::LeaseStatuses
     include Rentvine::Client::Ledgers
     include Rentvine::Client::Owners
     include Rentvine::Client::Portfolios

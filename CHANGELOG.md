@@ -8,6 +8,7 @@
 - Fixed spelling error in the lease model example.
 - Added support to load recurrening charges for a lease.
 - Updated gems to the latest versions.
+- Added support to load the custom leases statuses.
 
 ## [0.4.0] - 2025-01-30
 
