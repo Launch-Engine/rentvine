@@ -1,5 +1,16 @@
 ## [Unreleased]
 
+## [0.5.0] - 2025-06-22
+
+- Added support to load an individual tenant by id.
+- Update the endpoint used for fetching owners.
+- Dockerized the project for easier development for those on Windows.
+- Fixed spelling error in the lease model example.
+- Added support to load recurrening charges for a lease.
+- Updated gems to the latest versions.
+- Added support to load the custom leases statuses.
+- Added helper method on RentvineModel for checking if the response is an error using ".error?" which returns false.
+
 ## [0.4.0] - 2025-01-30
 
 - Added support on the lease to load the tenants for the lease.

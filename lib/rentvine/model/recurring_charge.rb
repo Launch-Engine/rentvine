@@ -1,5 +1,5 @@
 module Rentvine
-  class LeaseStatus < RentvineModel
+  class RecurringCharge < RentvineModel
     def initialize(data = {})
       super(data)
     end

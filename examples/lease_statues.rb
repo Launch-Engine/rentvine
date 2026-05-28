@@ -12,13 +12,15 @@ auth = {
 rv_client = Rentvine::Client.new(auth)
 
 # =========================================
-# Owner Examples
+# Lease Examples
 # =========================================
 
-rv_client.owners.each do |owner|
-  puts owner.name
+rv_client.lease_statuses.each do |lease_status|
+  puts lease_status.name
 end
 
-rv_client.owners(page: 1, page_size: 5).each do |owner|
-  puts owner.first_name
-end
+# ===========================
+
+lease_status_id = 10
+rv_obj = rv_client.lease_status(lease_status_id)
+puts rv_obj.name

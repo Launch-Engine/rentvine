@@ -18,3 +18,9 @@ rv_client = Rentvine::Client.new(auth)
 rv_client.tenants.each do |tenant|
   puts tenant.name
 end
+
+# ===========================
+
+tenant_id = 46
+rv_obj = rv_client.tenant(tenant_id)
+puts rv_obj.first_name

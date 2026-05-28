@@ -6,10 +6,12 @@ require_relative 'client/diagnostics'
 require_relative 'client/files'
 require_relative 'client/inspections'
 require_relative 'client/leases'
+require_relative 'client/lease_statuses'
 require_relative 'client/ledgers'
 require_relative 'client/owners'
 require_relative 'client/portfolios'
 require_relative 'client/properties'
+require_relative 'client/recurring_charges'
 require_relative 'client/tenants'
 require_relative 'client/transaction_entries'
 require_relative 'client/transactions'
@@ -29,11 +31,13 @@ require_relative 'model/diagnostic'
 require_relative 'model/file'
 require_relative 'model/inspection'
 require_relative 'model/lease'
+require_relative 'model/lease_status'
 require_relative 'model/ledger'
 require_relative 'model/owner'
 require_relative 'model/owner_distribution'
 require_relative 'model/portfolio'
 require_relative 'model/property'
+require_relative 'model/recurring_charge'
 require_relative 'model/tenant'
 require_relative 'model/transaction_entry'
 require_relative 'model/transaction'
@@ -53,10 +57,12 @@ module Rentvine
     include Rentvine::Client::Files
     include Rentvine::Client::Inspections
     include Rentvine::Client::Leases
+    include Rentvine::Client::LeaseStatuses
     include Rentvine::Client::Ledgers
     include Rentvine::Client::Owners
     include Rentvine::Client::Portfolios
     include Rentvine::Client::Properties
+    include Rentvine::Client::RecurringCharges
     include Rentvine::Client::Tenants
     include Rentvine::Client::TransactionEntries
     include Rentvine::Client::Transactions

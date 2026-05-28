@@ -15,6 +15,6 @@ rv_client = Rentvine::Client.new(auth)
 # Assocation Examples
 # =========================================
 
-rv_client.export_leaeses.each do |lease_info|
+rv_client.export_leases.each do |lease_info|
   puts lease_info.balance.past_due_total_amount
 end
