@@ -1,9 +1,5 @@
 ## [Unreleased]
 
-## [0.5.1] - 2026-05-28
-
-- Added helper method on RentvineModel for checking if the response is an error using ".error?" which returns false.
-
 ## [0.5.0] - 2025-06-22
 
 - Added support to load an individual tenant by id.
@@ -13,6 +9,7 @@
 - Added support to load recurrening charges for a lease.
 - Updated gems to the latest versions.
 - Added support to load the custom leases statuses.
+- Added helper method on RentvineModel for checking if the response is an error using ".error?" which returns false.
 
 ## [0.4.0] - 2025-01-30
 
