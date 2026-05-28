@@ -1,6 +1,6 @@
 ## [Unreleased]
 
-## [0.5.0] - 2025-06-22
+## [0.5.0] - 2026-05-28
 
 - Added support to load an individual tenant by id.
 - Update the endpoint used for fetching owners.
