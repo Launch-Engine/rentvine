@@ -4,6 +4,10 @@ module Rentvine
       super(data)
     end
 
+    def error?
+      false
+    end
+
     def to_rentvine_hash
       data_hash = to_h
 

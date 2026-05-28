@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.5.1] - 2026-05-28
+
+- Added helper method on RentvineModel for checking if the response is an error using ".error?" which returns false.
+
 ## [0.5.0] - 2025-06-22
 
 - Added support to load an individual tenant by id.
