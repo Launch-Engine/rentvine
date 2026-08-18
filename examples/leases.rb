@@ -24,10 +24,17 @@ rv_client = Rentvine::Client.new(auth)
 lease_id = 7
 rv_obj = rv_client.lease(lease_id)
 puts rv_obj.address
+
 # ===========================
 
 lease_id = 7
 rv_obj = rv_client.lease_tenants(lease_id)
+puts rv_obj.name
+
+# ===========================
+
+lease_id = 7
+rv_obj = rv_client.lease_occupants(lease_id)
 puts rv_obj.name
 
 # ===========================

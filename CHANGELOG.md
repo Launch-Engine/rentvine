@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.6.0] - 2026-08-17
+
+- Added support to load an lease occupants
+
 ## [0.5.0] - 2026-05-28
 
 - Added support to load an individual tenant by id.

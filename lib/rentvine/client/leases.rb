@@ -39,6 +39,13 @@ module Rentvine
 
         results.map { |result| Rentvine::Tenant.new(result) }
       end
+
+      def lease_occupants(lease_id, args = {})
+        results = process_request(:get, "leases/#{lease_id}/occupants", params: args)
+        return results if results.is_a?(RentvineError)
+
+        results.map { |result| Rentvine::Occupant.new(result) }
+      end
     end
   end
 end
