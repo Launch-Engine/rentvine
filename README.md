@@ -134,6 +134,9 @@ docker compose run rentvine bundle install
   - Leases
     - List `GET /leases`
     - View `GET /leases/:lease_id`
+    - Leases Export `GET /leases/export`
+    - Lease Tenants `GET /leases/:lease_id/tenants`
+    - Lease Occupants `GET /leases/:lease_id/occupants`
 
 - Maintenance
   - Work Orders
